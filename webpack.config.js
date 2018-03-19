@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
   entry: [
@@ -21,12 +22,20 @@ module.exports = {
             options: {
                 cacheDirectory: true,
                 presets:["es2015"]
-            }
+            },
         },
+        {
+          test:/\.(s*)css$/, 
+          use: ExtractTextPlugin.extract({ 
+                  fallback:'style-loader',
+                  use:['css-loader','style-loader'],
+              })
+      }
     ]
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new ExtractTextPlugin('styles.css')
   ],
   resolve: {
     // root: __dirname + "/src/js",
@@ -34,6 +43,6 @@ module.exports = {
     alias: {
         "react": path.resolve(__dirname, 'src/build/webpack-alias-react.js'),
         "react-dom": path.resolve(__dirname, 'src/build/webpack-alias-react-dom.js'),
-    },
+    }
   }
 };

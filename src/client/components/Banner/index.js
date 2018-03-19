@@ -2,15 +2,15 @@ import React, {Component} from 'react';
 import className from 'classnames';
 export default class Banner extends Component {
   render() {
-    const style = {
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      height: 800,
-      backgroundImage: 'url(assets/img/background.jpeg)'
-    };
+    // const style = {
+    //   backgroundSize: 'cover',
+    //   backgroundPosition: 'center',
+    //   height: 400,
+    //   backgroundImage: 'url(assets/img/background.jpeg)'
+    // };
 
     return (
-     <div style={style}>
+     <div className="Banner">
       </div>)
   }
 }
@@ -25,7 +25,6 @@ class Box extends Component {
 
     return (
       <div className="box" style={style}>
-        <h1>S</h1>
       </div>
     )
   }

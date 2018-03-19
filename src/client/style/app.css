@@ -1,0 +1,16 @@
+body {
+    font-family: 'Averta';
+}
+  
+h1, h2, h3, h4, h5, h6 {
+    font-family: inherit;
+}
+#app-container {
+    height: 100%;
+}
+.Banner {
+    background-size: 'cover';
+    background-position: 'center';
+    height: 400;
+    background-image: 'url(assets/img/background.jpeg)';
+}
